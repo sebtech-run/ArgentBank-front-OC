@@ -7,7 +7,7 @@ export default function FeatureItem(props) {
     <div className="feature-item">
       <img src={props.iconUrl} alt="Chat Icon" className="feature-icon" />
       <h3 className="feature-item-title">{props.title}</h3>
-      <p>{props.text}</p>
+      <p className='feature-item-text'>{props.text}</p>
     </div>
   )
 }
