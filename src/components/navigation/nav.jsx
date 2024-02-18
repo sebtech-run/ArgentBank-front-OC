@@ -22,12 +22,23 @@ return (
         </NavLink>
         <div>
         
-            <NavLink to="/login" className="main-nav-item">
+            <NavLink to="/login" className="not-connected">
                 <i className="fa fa-user-circle"></i>
-                Sign In
+               <p>Sign In</p> 
             </NavLink>
       
         </div>
+         <div className='connected'>
+                    <NavLink to='/user'>
+                        <i className='fa-solid fa-2x fa-circle-user' />
+                        { /* A changer lors de la récupération des comptes via API*/}
+                        <p> Tony  </p>
+                    </NavLink>
+                    <NavLink to='/'>
+                        <i className='fa-solid fa-arrow-right-from-bracket' />
+                        <p> Sign out </p>
+                    </NavLink>
+                </div>
     </nav>
 );
 }

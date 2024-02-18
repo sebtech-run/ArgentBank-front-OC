@@ -1,0 +1,9 @@
+nav {
+  color: #fff;
+  margin-bottom: 2rem;
+  margin-top: -6rem;
+}
+
+nav > h2 {
+  font-size: 2rem;
+}
