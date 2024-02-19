@@ -31,7 +31,7 @@ const Form = () => {
          
         </form>
         </section>
-        </main>
+       </main>
         </div>
     );
 };
