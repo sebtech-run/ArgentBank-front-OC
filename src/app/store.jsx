@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { combineReducers } from '@reduxjs/toolkit';
 import { authReducer } from './reducers/auth-reducers.jsx';
-//import { userReducer } from './reducers/user-reducers.jsx';
+import { userReducer } from './reducers/user-reducers.jsx';
 
 export const initialState = {
     status: "VOID",
@@ -18,7 +18,7 @@ export const initialState = {
 
 const rootReducer = combineReducers({
    auth: authReducer,
-   //user: userReducer,
+   user: userReducer,
 })
 
 const store = configureStore({

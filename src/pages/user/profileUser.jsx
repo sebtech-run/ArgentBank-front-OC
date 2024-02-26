@@ -6,6 +6,8 @@ import User from '../../components/user/user';
 import Account from '../../components/account/account';
 import Footer from '../../components/footer/footer';
 
+import '../../styles/pages/index.css';
+
 const ProfileUser = () => {
 
      const isConnected = useSelector((state) => state.auth.isConnected);
@@ -46,19 +48,11 @@ const ProfileUser = () => {
 
 
 
-
-
-
-
-
-
-
-
     return (
         <div className='user-page'>
             
             <main className="bg-dark">
-                <User firstname='Tony' lastname='Jarvis' />
+                <User />
                 <Account title="Argent Bank Checking (x8349)" amount="$2,082.79" description="Available Balance" />
                 <Account title="Argent Bank Savings (x6712)" amount="$10,928.42" description="Available Balance" />
                 <Account title="Argent Bank Credit Card (x8349)" amount="$184.30" description="Current Balance" />

@@ -8,3 +8,7 @@
     flex-direction: row;
   }
 }
+
+.bg-dark {
+  background-color: black;
+}

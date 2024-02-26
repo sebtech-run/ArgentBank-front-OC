@@ -3,13 +3,18 @@ import Form from '../../components/form/form';
 
 import Footer from '../../components/footer/footer';
 
+import '../../styles/pages/index.css';
+
 const Login = () => {
     return (
-        <div>
-          
+      <>
+           <main className="bg-login">
             <Form />
+                
+                
+            </main>
             <Footer />
-        </div>
+       </>
     );
 };
 
