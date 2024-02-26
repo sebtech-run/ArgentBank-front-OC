@@ -39,7 +39,9 @@
 }
 
 .connected {
-  display: none;
+  display: flex;
+  gap: 16px;
+  margin-right: 8px;
 }
 
 .not-connected {

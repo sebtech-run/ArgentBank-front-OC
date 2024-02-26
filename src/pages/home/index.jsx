@@ -1,6 +1,6 @@
 import React from 'react';
 import Banner from '../../components/banner/banner';
-import Nav from '../../components/navigation/nav';
+
 import Footer from '../../components/footer/footer';
 import FeatureItem from '../../components/featureItem/featureItem';
 
@@ -31,7 +31,7 @@ import '../../styles/pages/index.css';
 const Index = () => {
     return (
         <>
-      <Nav />
+     
       <main>
         <Banner />
         <section className="features">

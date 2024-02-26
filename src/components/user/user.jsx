@@ -1,6 +1,13 @@
 import React from 'react';
+import { useSelector } from "react-redux";
 
-const User = ({firstname, lastname}) => {
+import '../../styles/components/user.css';
+
+const User = () => {
+
+    const firstname = useSelector((state) => state.auth.user.firstname);
+    const lastname = useSelector((state) => state.auth.user.lastname);
+
     return (
         <div>
             <div className="header">

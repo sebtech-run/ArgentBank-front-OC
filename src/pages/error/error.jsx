@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Nav from '../../components/navigation/nav';
+
 import Footer from '../../components/footer/footer';
 import { NavLink } from 'react-router-dom';
 
@@ -9,7 +9,7 @@ import '../../styles/pages/error.css';
 const Error = () => {
     return (
         <div className='page-error'>
-            <Nav />
+           
             <main>
                 <section className="error">
                     <h2 className="sr-only">Error 404</h2>
