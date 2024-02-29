@@ -7,6 +7,7 @@ import ProfileUser from './pages/user/profileUser';
 import Error from './pages/error/error';
 
 import Nav from './components/navigation/nav';
+import './main.css';
 
 
 

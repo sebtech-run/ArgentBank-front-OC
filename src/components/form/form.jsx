@@ -1,10 +1,9 @@
 import React from 'react';
-// import { NavLink } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { loginFailed, loginSuccess } from '../../app/actions/auth-actions';
-import { isValidEmail, isValidPassword } from '../../app/utils/regex';
+import { loginFailed, loginSuccess } from '../../app/actions/auth-actions.jsx';
+import { isValidEmail, isValidPassword } from '../../app/utils/regex.jsx';
 
 
 import "../../styles/components/form.css";
@@ -15,20 +14,21 @@ const Form = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [rememberMe, setRememberMe] = useState(false);
-    const [error, setError] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
     const handleSubmit = async (event) => {
         event.preventDefault();
         if (!isValidEmail(email)) {
-            setError("Invalid email adress");
+            setErrorMessage("Invalid email adress");
             return;
         }
         if (!isValidPassword(password)) {
-            setError("Invalid password");
+            setErrorMessage("Invalid password");
             return;
         }
+      
         try {
             const response = await fetch("http://localhost:3001/api/v1/user/login", {
                 method: "POST",
@@ -40,10 +40,14 @@ const Form = () => {
             if (response.ok) {
                 const data = await response.json();
                 const token = data.body.token;
-                dispatch(loginSuccess(token));
+              dispatch(loginSuccess(token));
+               sessionStorage.setItem("token", token);
+                if (rememberMe) {
+                    localStorage.setItem("token", token);
+                }
                 navigate('/user');
             } else {
-                dispatch(loginFailed(error));
+                dispatch(loginFailed(errorMessage));
             }
         } catch (error) {
             console.error(error);
@@ -88,7 +92,7 @@ const Form = () => {
              <button className="sign-in-button">
                     Sign In
              </button>
-           {error && <p className='error-message'>{error}</p>}
+           {errorMessage && <p className='error-message'>{errorMessage}</p>}
          
              
          </form>

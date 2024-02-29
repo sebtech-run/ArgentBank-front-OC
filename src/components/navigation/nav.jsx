@@ -12,8 +12,8 @@ import '../../styles/components/nav.css';
 
 const Nav = () => {
     
-    const isConnected = useSelector((state) => state.auth.isConnected)
-     const firstname = useSelector((state) => state.auth.user.firstname)
+    const isConnected = useSelector((state) => state.auth.token);
+    const userName = useSelector((state) => state.user.username);
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -25,37 +25,40 @@ const Nav = () => {
         navigate('/');
     }
  
-  return (
-    <nav className="main-nav">
-         <h1 className="sr-only">Argent Bank</h1>
-        <NavLink className="main-nav-logo" to="/">
+    return (
+        <header>
+             <h1 className="sr-only">Argent Bank</h1>
+       <nav>
+        
+        <NavLink to="/">
             <img
-                className="main-nav-logo-image"
+               className='image'
                 src={Logo}
                 alt="Argent Bank Logo"
             />
-            
-        </NavLink>
+          </NavLink>
+          
         {isConnected ? (
                     <div className='connected'>
-                        <NavLink to='/user'>
-                            <i className='fa-solid fa-2x fa-circle-user' />
-                            <p>{ firstname }</p>
+                        <NavLink to='/user' className="nav-login">
+                            <i className='fa-solid fa-circle-user' />
+                            { userName }
                         </NavLink>
-                        <NavLink to='/' onClick={logoutHandler}>
+                        <NavLink to='/' className="nav-login" onClick={logoutHandler}>
                             <i className='fa-solid fa-arrow-right-from-bracket' />
-                            <p> Sign out </p>
+                            Sign out 
                         </NavLink>
                     </div>
                     ) : (
                     <div className='not-connected'>
-                        <NavLink to='/login' >
+                        <NavLink to='/login' className="nav-login" >
                             <i className="fa-solid fa-circle-user"></i>
-                            <p>Sign In</p>
+                            Sign In
                         </NavLink>
                     </div>
                 )}
-    </nav>
+            </nav>
+            </header>
 );
 }
 

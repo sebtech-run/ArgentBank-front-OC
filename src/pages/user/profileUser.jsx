@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-
+import { userProfile } from '../../app/actions/user-actions.jsx';
 import User from '../../components/user/user';
 import Account from '../../components/account/account';
 import Footer from '../../components/footer/footer';
@@ -10,12 +10,12 @@ import '../../styles/pages/index.css';
 
 const ProfileUser = () => {
 
-     const isConnected = useSelector((state) => state.auth.isConnected);
+  
     const token = useSelector((state) => state.auth.token);
     const dispatch = useDispatch();
 
     useEffect(() => {
-        if (isConnected) {
+        if (token) {
             const userData = async () => {
                 try {
                     const response = await fetch('http://localhost:3001/api/v1/user/profile', {
@@ -27,14 +27,11 @@ const ProfileUser = () => {
                     });
                     if (response.ok) {
                         const data = await response.json();
-                        dispatch({
-                            type: 'GET_USERPROFILE',
-                            payload: {
-                                firstname: data.body.firstName,
-                                lastname: data.body.lastName,
-                                username: data.body.userName
-                            },
-                        });
+                        const firstname = data.body.firstName;
+                        const lastname = data.body.lastName;
+                        const username = data.body.userName;
+                        dispatch(userProfile(firstname, lastname, username));
+
                     } else {
                         console.log("error while retrieving profile");
                     }
@@ -44,7 +41,7 @@ const ProfileUser = () => {
             };
             userData();
         }
-    }, [dispatch, token, isConnected]);
+    }, [dispatch, token]);
 
 
 

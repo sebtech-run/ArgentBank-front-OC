@@ -8,11 +8,9 @@ import '../../styles/pages/index.css';
 const Login = () => {
     return (
       <>
-           <main className="bg-login">
-            <Form />
-                
-                
-            </main>
+          
+            <Form />  
+           
             <Footer />
        </>
     );

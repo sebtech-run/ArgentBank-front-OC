@@ -32,7 +32,7 @@ const Index = () => {
     return (
         <>
      
-      <main>
+      <div>
         <Banner />
         <section className="features">
           <FeatureItem
@@ -51,8 +51,9 @@ const Index = () => {
             text={featureTextSecurity}
           />
         </section>
-      </main>
-      <Footer />
+      
+          <Footer />
+          </div>
     </>
     );
 };

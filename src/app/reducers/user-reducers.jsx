@@ -1,31 +1,33 @@
-export const USER_PROFILE_SUCCESS = 'USER_PROFILE_SUCCESS'
-export const USER_PROFILE_FAIL = 'USER_PROFILE_FAIL'
-export const USER_PROFILE_RESET = 'USER_PROFILE_RESET'
-export const USER_PROFILE_UPDATE = 'USER_PROFILE_UPDATE'
+import { GET_USERPROFILE, EDIT_USERNAME, LOGOUT } from "../actions/type-actions.jsx"
 
-const INITIAL_STATE = { success: false, firstName: '', lastName: '' }
-
-export const userReducer = (state = INITIAL_STATE, action) => {
-  switch (action.type) {
-    case USER_PROFILE_SUCCESS:
-      return {
-        firstName: action.payload.body.firstName,
-        lastName: action.payload.body.lastName,
-      }
-    case USER_PROFILE_UPDATE:
-      return {
-        success: true,
-        firstName: action.payload.body.firstName,
-        lastName: action.payload.body.lastName,
-      }
-    case USER_PROFILE_FAIL:
-      return { error: action.payload }
-    case USER_PROFILE_RESET:
-      return {
-        firstName: null,
-        lastName: null,
-      }
-    default:
-      return state
-  }
+const initialState = {
+    status: "VOID",
+    firstname: null,
+    lastname: null,
+    username: null
 }
+
+export const userReducer = (state = initialState, action ) => {
+    switch (action.type) {
+        case GET_USERPROFILE:
+            return {
+                ...state,
+                status: "SUCCEEDED",
+                firstname: action.payload.firstname,
+                lastname: action.payload.lastname,
+                username: action.payload.username
+            }
+        case EDIT_USERNAME: 
+            return {
+                ...state,
+                status: "MODIFIED",
+                username: action.payload
+            } 
+        case LOGOUT: {
+            return initialState;  
+        }   
+        default:
+            return state;    
+    }
+}
+
