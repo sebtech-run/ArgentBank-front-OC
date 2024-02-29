@@ -4,9 +4,9 @@ import Banner from '../../components/banner/banner';
 import Footer from '../../components/footer/footer';
 import FeatureItem from '../../components/featureItem/featureItem';
 
-import iconChat from '../../assets/icon-chat.png';
-import iconMoney from '../../assets/icon-money.png';
-import iconSecurity from '../../assets/icon-security.png';
+import iconChat from '../../assets/icon-chat.webp';
+import iconMoney from '../../assets/icon-money.webp';
+import iconSecurity from '../../assets/icon-security.webp';
 
 import '../../styles/pages/index.css';
 

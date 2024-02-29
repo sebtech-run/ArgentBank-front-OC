@@ -5,7 +5,7 @@ import { logout } from '../../app/actions/auth-actions';
 
 
 
-import Logo from "../../assets/argentBankLogo.png";
+import Logo from "../../assets/argentBankLogo.webp";
 
 import '../../styles/components/nav.css';
 
