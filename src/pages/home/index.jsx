@@ -34,22 +34,28 @@ const Index = () => {
      
       <div>
         <Banner />
-        <section className="features">
+          <section className="features">
+            <div>
           <FeatureItem
             iconUrl={iconChat}
             title={featureTitleChat}
             text={featureTextChat}
-          />
+              />
+            </div>
+            <div>
           <FeatureItem
             iconUrl={iconMoney}
             title={featureTitleMoney}
             text={featureTextMoney}
-          />
+              />
+            </div>
+            <div>
           <FeatureItem
             iconUrl={iconSecurity}
             title={featureTitleSecurity}
             text={featureTextSecurity}
-          />
+              />
+              </div>
         </section>
       
           <Footer />

@@ -59,6 +59,7 @@
 main {
   min-height: calc(80vh - 50px);
   padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 .error-message {

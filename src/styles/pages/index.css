@@ -1,6 +1,11 @@
 .features {
   display: flex;
   flex-direction: column;
+  margin-top: 30px;
+}
+
+.features div {
+  width: 90%;
 }
 
 @media (min-width: 920px) {

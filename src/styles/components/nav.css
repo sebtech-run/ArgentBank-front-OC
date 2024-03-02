@@ -7,7 +7,7 @@ header > nav {
 
 header .image {
   max-width: 100%;
-  width: 12.5rem;
+  width: 17.5rem;
 }
 
 .connected {
@@ -19,18 +19,25 @@ header .image {
 .connected .nav-login {
   text-decoration: none;
   color: black;
-  font-size: 20px;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
 }
 
 .not-connected .nav-login {
   text-decoration: none;
   color: black;
-  font-size: 20px;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .fa-solid {
   margin-right: 0.5rem;
-  font-size: 20px;
+  font-size: 30px;
 }
 
 @media (max-width: 720px) {
